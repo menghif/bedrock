@@ -1,22 +1,18 @@
 module.exports = {
     env: {
-        'browser': true,
-        'commonjs': true,
-        'jasmine': true
+        browser: true,
+        commonjs: true,
+        jasmine: true
     },
-    extends: [
-        'eslint:recommended',
-        'plugin:json/recommended',
-        'prettier'
-    ],
+    extends: ['eslint:recommended', 'plugin:json/recommended', 'prettier'],
     rules: {
         // Require strict mode directive in top level functions
         // https://eslint.org/docs/rules/strict
-        'strict': ['error', 'function'],
+        strict: ['error', 'function'],
 
         // Use type-safe equality operators
         // https://eslint.org/docs/rules/eqeqeq
-        'eqeqeq': ['error', 'always'],
+        eqeqeq: ['error', 'always'],
 
         // Treat var statements as if they were block scoped
         // https://eslint.org/docs/rules/block-scoped-var
@@ -36,7 +32,7 @@ module.exports = {
 
         // Require radix parameter
         // https://eslint.org/docs/rules/radix
-        'radix': 'error',
+        radix: 'error',
 
         // Disallow the use of `console`
         // https://eslint.org/docs/rules/no-console
@@ -48,14 +44,12 @@ module.exports = {
     overrides: [
         {
             // JS files transpiled by Babel
-            files: [
-                'media/js/**/*.es6.js',
-            ],
+            files: ['media/js/**/*.es6.js'],
             env: {
-                'es2017': true
+                es2017: true
             },
             parserOptions: {
-                'sourceType': 'module'
+                sourceType: 'module'
             },
             rules: {
                 // Require `let` or `const` instead of `var`
@@ -76,7 +70,7 @@ module.exports = {
                 'tests/unit/**/*.js'
             ],
             env: {
-                'es2017': true
+                es2017: true
             }
         },
         {
@@ -87,17 +81,17 @@ module.exports = {
                 'tests/unit/karma.conf.js'
             ],
             env: {
-                'node': true,
-                'es2017': true
+                node: true,
+                es2017: true
             },
             rules: {
-                'strict': ['error', 'global'],
+                strict: ['error', 'global']
             }
         }
     ],
     globals: {
-        'Mozilla': 'writable',
-        'Mzp': 'writable',
-        'site': 'writable'
+        Mozilla: 'writable',
+        Mzp: 'writable',
+        site: 'writable'
     }
 };
